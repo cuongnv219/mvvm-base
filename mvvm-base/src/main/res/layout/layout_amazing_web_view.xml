@@ -1,0 +1,20 @@
+<RelativeLayout style="@style/Layout.FillWidthHeight"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                tools:context=".ui.widget.AmazingWebView">
+
+    <WebView
+        android:id="@+id/web_view_real"
+        style="@style/Layout.FillWidthHeight" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_waiting"
+        style="@style/ProgressBar" />
+
+    <FrameLayout
+        android:id="@+id/fullscreen_custom_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone" />
+</RelativeLayout>

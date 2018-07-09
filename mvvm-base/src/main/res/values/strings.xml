@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">Base</string>
+  <string name="no_item">No item.</string>
+  <string name="no_more_data">No more imageItems.</string>
+  <string name="loading">Loading</string>
+  <string name="no_internet">Something error.\nTap to retry.</string>
+</resources>

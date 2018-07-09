@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AmazingView">
+        <attr name="textEmptyList" format="string" />
+        <attr name="numberColumns" format="integer" />
+    </declare-styleable>
+</resources>

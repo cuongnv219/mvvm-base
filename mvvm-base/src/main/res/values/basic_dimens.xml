@@ -1,0 +1,25 @@
+<resources>
+  <!--Some basic dimen-->
+  <dimen name="margin_extra_long">@dimen/_32sdp</dimen>
+  <dimen name="margin_long">@dimen/_20sdp</dimen>
+  <dimen name="margin_standard">@dimen/_16sdp</dimen>
+  <dimen name="margin_short">@dimen/_8sdp</dimen>
+  <dimen name="margin_extra_short">@dimen/_4sdp</dimen>
+  <dimen name="margin_tiny">@dimen/_2sdp</dimen>
+  <!--Some basic dimen-->
+
+  <!--Some basic dimen text-->
+  <dimen name="text_extra_big">@dimen/_20ssp</dimen>
+  <dimen name="text_big">@dimen/_18ssp</dimen>
+  <dimen name="text_normal">@dimen/_16ssp</dimen>
+  <dimen name="text_small">@dimen/_14ssp</dimen>
+  <dimen name="text_extra_small">@dimen/_12ssp</dimen>
+  <dimen name="text_tiny">@dimen/_10ssp</dimen>
+  <!--Some basic dimen text-->
+
+  <!--Custom edit text-->
+  <dimen name="padding_text">@dimen/_10sdp</dimen>
+  <dimen name="padding_text_normal">@dimen/_5sdp</dimen>
+  <!--Custom edit text-->
+  <dimen name="margin_moving_arrow">@dimen/_6sdp</dimen>
+</resources>

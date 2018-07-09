@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="AmazingToolBar">
+    <attr name="icon_left_button" format="reference"/>
+    <attr name="icon_right_button" format="reference"/>
+    <attr name="icon_center" format="reference"/>
+
+    <attr name="text_left" format="string"/>
+    <attr name="text_right" format="string"/>
+    <attr name="text_title" format="string"/>
+
+    <attr name="background_res" format="reference"/>
+    <attr name="background_color" format="color"/>
+  </declare-styleable>
+</resources>
