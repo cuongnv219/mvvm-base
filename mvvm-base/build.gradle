@@ -24,17 +24,17 @@ dependencies {
     api 'com.android.support:design:27.1.1'
     api 'com.android.support:appcompat-v7:27.1.1'
     api 'com.github.bumptech.glide:glide:4.7.1'
-    api 'com.google.code.gson:gson:2.8.2'
-    api 'com.karumi:dexter:4.2.0'
+//    api 'com.google.code.gson:gson:2.8.2'
+//    api 'com.karumi:dexter:4.2.0'
     api 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
 //    network
-    api "com.amitshekhar.android:rx2-android-networking:1.0.1"
+//    api "com.amitshekhar.android:rx2-android-networking:1.0.1"
 
 //    database
-    api "android.arch.persistence.room:rxjava2:1.1.1"
-    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+//    api "android.arch.persistence.room:rxjava2:1.1.1"
+//    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     //font
     api "uk.co.chrisjenx:calligraphy:2.3.0"
 
@@ -56,5 +56,5 @@ dependencies {
     api 'com.muddzdev:styleabletoast:2.1.2'
 
     //Event bus
-    api 'org.greenrobot:eventbus:3.1.1'
+//    api 'org.greenrobot:eventbus:3.1.1'
 }
