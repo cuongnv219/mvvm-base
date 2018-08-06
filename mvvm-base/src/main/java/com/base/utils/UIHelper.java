@@ -1,11 +1,17 @@
 package com.base.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 /**
  * ka
@@ -20,6 +26,7 @@ public class UIHelper {
      * get display size
      *
      * @param context: Context
+     *
      * @return: point(display size)
      */
     public static Point getDisplaySize(Context context) {
@@ -35,6 +42,7 @@ public class UIHelper {
      * get display shorter side size
      *
      * @param context: Context
+     *
      * @return size of display shorter side
      */
     public static int getDisplayShorterSideSize(Context context) {
@@ -47,6 +55,7 @@ public class UIHelper {
      *
      * @param context:   Context
      * @param cellWidth: cell width
+     *
      * @return: number of column
      */
     public static int calcGridColumn(Context context, int cellWidth) {
@@ -91,6 +100,7 @@ public class UIHelper {
      * Returns a valid DisplayMetrics object
      *
      * @param context valid context
+     *
      * @return DisplayMetrics object
      */
     public static DisplayMetrics getDisplayMetrics(final Context context) {
@@ -112,5 +122,50 @@ public class UIHelper {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    public static int dpToPx(int dp) {
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        return (int) (dp * metrics.density);
+    }
+
+    public static int pxToDp(int px) {
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        return (int) (px / metrics.density);
+    }
+
+    public static int spToPx(int sp) {
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, metrics);
+    }
+
+    public static int pxToSp(int px) {
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        return px / (int) metrics.scaledDensity;
+    }
+
+    public static int getScreenWidth(Activity activity) {
+
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        return outMetrics.widthPixels;
+    }
+
+    public static int getScreenHeight(Activity activity) {
+
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        return outMetrics.heightPixels;
+    }
+
+    public static void setIconColor(ImageView iconHolder, int color) {
+        Drawable wrappedDrawable = DrawableCompat.wrap(iconHolder.getDrawable());
+        DrawableCompat.setTint(wrappedDrawable, color);
+        iconHolder.setImageDrawable(wrappedDrawable);
+        iconHolder.invalidate();
     }
 }

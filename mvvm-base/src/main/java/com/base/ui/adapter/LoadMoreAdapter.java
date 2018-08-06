@@ -64,12 +64,7 @@ public abstract class LoadMoreAdapter<T> extends RecyclerView.Adapter<RecyclerVi
         } else {
             bindItemViewHolder(holder, position);
             if (onClickListener != null) {
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        onClickListener.onClick(mListItem.get(holder.getAdapterPosition()));
-                    }
-                });
+                holder.itemView.setOnClickListener(v -> onClickListener.onClick(mListItem.get(holder.getAdapterPosition())));
             }
         }
     }
