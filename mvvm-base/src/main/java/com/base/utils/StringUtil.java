@@ -21,9 +21,9 @@ public class StringUtil {
     public static boolean isExistNull(String... arr) {
         boolean isExitNull = true;
         if (arr == null) {
-            isExitNull = true;
+            return true;
         } else {
-            for (String item : arr) {
+            for (String item: arr) {
                 if (!checkEmpty(item)) {
                     isExitNull = false;
                     continue;
@@ -40,6 +40,7 @@ public class StringUtil {
      * check phone number is valid or not
      *
      * @param phoneNumber phone number
+     *
      * @return valid or not
      */
     public static boolean isValidPhoneNumber(String phoneNumber) {
@@ -50,6 +51,7 @@ public class StringUtil {
      * check ip address is valid or not
      *
      * @param ipAddress ip address
+     *
      * @return valid or not
      */
     public static boolean isValidIpAddress(String ipAddress) {
@@ -59,5 +61,4 @@ public class StringUtil {
     private static Boolean checkEmpty(String text) {
         return text == null || text.isEmpty();
     }
-
 }

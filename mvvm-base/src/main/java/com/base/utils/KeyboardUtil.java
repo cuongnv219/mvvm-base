@@ -65,7 +65,6 @@ public class KeyboardUtil {
     }
 
     public static void closeSoftKeyboard(Activity activity) {
-
         View currentFocusView = activity.getCurrentFocus();
         if (currentFocusView != null) {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);

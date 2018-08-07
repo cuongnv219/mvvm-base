@@ -2,14 +2,19 @@ package com.base.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -19,8 +24,6 @@ import android.widget.ImageView;
  */
 
 public class UIHelper {
-
-    private static final Logger LOGGER = Logger.getLogger(UIHelper.class);
 
     /**
      * get display size
@@ -62,25 +65,6 @@ public class UIHelper {
         Point displaySize = getDisplaySize(context);
         int width = displaySize.x;
         return width / cellWidth;
-    }
-
-    public static int getScreenOrientation(Context context) {
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        if (wm != null) {
-            Display display = wm.getDefaultDisplay();
-            int orientation;
-            if (display.getWidth() == display.getHeight()) {
-                orientation = Configuration.ORIENTATION_SQUARE;
-            } else {
-                if (display.getWidth() < display.getHeight()) {
-                    orientation = Configuration.ORIENTATION_PORTRAIT;
-                } else {
-                    orientation = Configuration.ORIENTATION_LANDSCAPE;
-                }
-            }
-            return orientation;
-        }
-        return 0;
     }
 
     public static int dpToPx(final Context context, final float dp) {
@@ -167,5 +151,27 @@ public class UIHelper {
         DrawableCompat.setTint(wrappedDrawable, color);
         iconHolder.setImageDrawable(wrappedDrawable);
         iconHolder.invalidate();
+    }
+
+    /**
+     * Gets a reference to a given drawable and prepares it for use with tinting through.
+     *
+     * @param resId the resource id for the given drawable
+     *
+     * @return a wrapped drawable ready fo use
+     * with {@link android.support.v4.graphics.drawable.DrawableCompat}'s tinting methods
+     *
+     * @throws Resources.NotFoundException
+     */
+    public static Drawable getWrappedDrawable(Context context, @DrawableRes int resId) throws Resources.NotFoundException {
+        return DrawableCompat.wrap(ResourcesCompat.getDrawable(context.getResources(), resId, null));
+    }
+
+    public static int getColor(Context context, @ColorRes int resId) throws Resources.NotFoundException {
+        return ContextCompat.getColor(context, resId);
+    }
+
+    public static void removeGlobalLayoutObserver(View view, ViewTreeObserver.OnGlobalLayoutListener layoutListener) {
+        view.getViewTreeObserver().removeOnGlobalLayoutListener(layoutListener);
     }
 }
